@@ -27,7 +27,11 @@ function App() {
         exact
         render={() => <Home playerName={playerName} />}
       />
-      <Route path="/scores" exact render={() => <Scores />} />
+      <Route
+        path="/scores"
+        exact
+        render={() => <Scores playerName={playerName} />}
+      />
       <Route
         path="/sudoku"
         exact

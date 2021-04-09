@@ -3,21 +3,24 @@ import React from "react";
 const Sudoku = (props) => {
   const [tablero, setTablero] = React.useState([
     [
-      { value: 0, enabled: true },
-      { value: 0, enabled: true },
-      { value: 0, enabled: true },
+      { value: "", enabled: true },
+      { value: "", enabled: true },
+      { value: "", enabled: true },
     ],
     [
-      { value: 0, enabled: true },
-      { value: 0, enabled: true },
-      { value: 0, enabled: true },
+      { value: "", enabled: true },
+      { value: "", enabled: true },
+      { value: "", enabled: true },
     ],
     [
-      { value: 0, enabled: true },
-      { value: 0, enabled: true },
-      { value: 0, enabled: true },
+      { value: "", enabled: true },
+      { value: "", enabled: true },
+      { value: "", enabled: true },
     ],
   ]);
+
+  // console.log("Hola");
+
   return (
     <>
       <div className="homeInformacion">
@@ -33,6 +36,7 @@ const Sudoku = (props) => {
                   name={`${i}-${j}`}
                   enabled={celda.enabled}
                   value={celda.value}
+                  onChange={handleChange}
                 ></input>
               ))}
             </div>
@@ -42,7 +46,25 @@ const Sudoku = (props) => {
     </>
   );
 
-  function handleChange(e) {}
+  function handleChange(e) {
+    const indiceFila = parseInt(e.target.name.charAt(0));
+    const indiceColumna = parseInt(e.target.name.charAt(2));
+
+    // console.log(e.target.value);
+    setTablero(
+      tablero.map((columna, i) => {
+        return columna.map((celda, j) => {
+          if (i === indiceFila && j === indiceColumna) {
+            return {
+              ...celda,
+              value: parseInt(e.target.value),
+            };
+          }
+          return celda;
+        });
+      })
+    );
+  }
 };
 
 export default Sudoku;

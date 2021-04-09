@@ -1,11 +1,12 @@
 import React from "react";
 
-const Scores = () => {
+const Scores = (props) => {
   return (
     <div className="homeInformacion">
       <h2>Scores</h2>
-     
+      <h2>Jugador: {props.playerName}</h2>
     </div>
+  
   );
 };
 

@@ -6,6 +6,7 @@
 
     2. Crear Grid con valores cargados (3 numeros). 
         - [] Tablero 3x3 
+        - [] Verificar que el numero ingresado no se repita.
         - [] Timer
     
     3. Tabla de puntajes.
