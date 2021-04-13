@@ -33,7 +33,7 @@ const Login = (props) => {
 
   function controlHandleSubmit(e) {
     e.preventDefault();
-    props.setUsers([...props.users, playerName]);
+    props.setUsers([...props.users, { playerName, tiempo: 0 }]);
     props.setPlayerName(playerName);
     setPlayerName("");
     history.push("/home");

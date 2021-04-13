@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Sudoku = (props) => {
   const inicialTablero = [
@@ -19,8 +19,11 @@ const Sudoku = (props) => {
     ],
   ];
   const [tablero, setTablero] = React.useState(inicialTablero);
+  const [tiempoInicial, setTiempoInicial] = React.useState();
 
-  // console.log("Hola");
+  useEffect(() => {
+    setTiempoInicial(Date.now());
+  }, []);
 
   return (
     <>
@@ -72,12 +75,8 @@ const Sudoku = (props) => {
     const tableroSet = new Set(returnArray);
     console.log(tableroSet.size);
     console.log(returnArray.length);
-
-    if (returnArray.length === tableroSet.size) {
-      return false;
-    } else {
-      return true;
-    }
+    // returnArray.length === tableroSet.size;
+    return returnArray.length !== tableroSet.size;
   }
 
   function cleanCells() {
@@ -85,16 +84,20 @@ const Sudoku = (props) => {
   }
 
   function checkTablero() {
-    if (hasDuplicate()) {
-      // console.log("Valores repetidos");
-      alert("Valores repetidos");
-    } else {
-      alert("No hay valores repetidos");
-      cleanCells();
-    }
+    const tiempoFinal = Date.now();
     if (hasEmptyCells()) {
       alert("No podes dejar valores vacios");
+      return;
     }
+    if (hasDuplicate()) {
+      alert("Valores repetidos");
+      return;
+    }
+    alert("No hay valores repetidos");
+    cleanCells();
+
+    const tiempoTotal = (tiempoFinal - tiempoInicial) / 1000;
+    console.log(tiempoTotal);
   }
 
   function handleChange(e) {
