@@ -6,7 +6,6 @@ const Scores = (props) => {
       <h2>Scores</h2>
       <h2>Jugador: {props.playerName}</h2>
     </div>
-  
   );
 };
 

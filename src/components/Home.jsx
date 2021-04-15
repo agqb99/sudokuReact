@@ -6,7 +6,7 @@ const Home = (props) => {
     <div className="homeInformacion">
       <h2>Jugador: {props.playerName}</h2>
       <button>
-        <Link to="/sudoku">Sudoky</Link>
+        <Link to="/sudoku">Sudoky </Link>
       </button>
       <button>
         <Link to="/scores">Scores </Link>

@@ -30,12 +30,14 @@ function App() {
       <Route
         path="/scores"
         exact
-        render={() => <Scores playerName={playerName} />}
+        render={() => <Scores playerName={playerName} users={users} />}
       />
       <Route
         path="/sudoku"
         exact
-        render={() => <Sudoku playerName={playerName} />}
+        render={() => (
+          <Sudoku playerName={playerName} users={users} setUsers={setUsers} />
+        )}
       />
     </Switch>
   );

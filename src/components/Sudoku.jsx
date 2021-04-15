@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 const Sudoku = (props) => {
   const inicialTablero = [
@@ -20,6 +21,7 @@ const Sudoku = (props) => {
   ];
   const [tablero, setTablero] = React.useState(inicialTablero);
   const [tiempoInicial, setTiempoInicial] = React.useState();
+  const history = useHistory();
 
   useEffect(() => {
     setTiempoInicial(Date.now());
@@ -54,7 +56,6 @@ const Sudoku = (props) => {
       </div>
     </>
   );
-
   // function hasDuplicateInRows() {}
   // function hasDuplicateInColumns() {}
 
@@ -93,11 +94,26 @@ const Sudoku = (props) => {
       alert("Valores repetidos");
       return;
     }
-    alert("No hay valores repetidos");
-    cleanCells();
-
     const tiempoTotal = (tiempoFinal - tiempoInicial) / 1000;
     console.log(tiempoTotal);
+
+    console.log(props.users);
+    props.setUsers(
+      props.users.map((user) => {
+        // return user
+        if (user.playerName === props.playerName) {
+          return {
+            playerName: props.playerName,
+            tiempo: tiempoTotal,
+          };
+        }
+        return user;
+      })
+    );
+
+    alert("No hay valores repetidos");
+    cleanCells();
+    history.push("/home");
   }
 
   function handleChange(e) {
@@ -121,9 +137,6 @@ const Sudoku = (props) => {
           });
         })
       );
-      // if (e.target.value === "" ) {
-      //   alert("No puedes dejar espacios en blanco")
-      // }
     }
   }
 };
