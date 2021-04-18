@@ -102,11 +102,27 @@ const Sudoku = (props) => {
       props.users.map((user) => {
         // return user
         if (user.playerName === props.playerName) {
+          let tiempo = 0;
+          console.log(props.tiempo);
+          if (props.tiempo) {
+            console.log("entro a if");
+
+            props.tiempo > tiempoTotal
+              ? (tiempo = tiempoTotal)
+              : (tiempo = props.tiempo);
+          } else {
+            tiempo = tiempoTotal;
+            console.log("entro a else");
+          }
+          console.log(tiempo);
+          console.log(props);
+
           return {
             playerName: props.playerName,
-            tiempo: tiempoTotal,
+            tiempo: tiempo,
           };
         }
+
         return user;
       })
     );
