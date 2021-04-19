@@ -35,6 +35,9 @@ const Login = (props) => {
     e.preventDefault();
     props.setUsers([...props.users, { playerName, tiempo: 0 }]);
     props.setPlayerName(playerName);
+     if (playerName === props.playerName) {
+        alert("Este nombre ya está en uso")
+     }
     setPlayerName("");
     history.push("/home");
   }

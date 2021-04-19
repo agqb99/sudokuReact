@@ -14,6 +14,7 @@
         - [X] Crear component de Score.
         - [X] Pasar PlayerName.
         - [X] Pasar Score de los users.
+        - [X] Pasar Winners.
 
     4. [] Agregar Styles a los components.
 
