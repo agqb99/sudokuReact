@@ -7,14 +7,16 @@ const Scores = (props) => {
   return (
     <>
       <div className="">
-        <h2>Scores</h2>
+        <h2>Winners</h2>
         {props.users.map((user) => (
           <div>
             <div className="usuarios">
-              {user.tiempo > 30 && user.tiempo !== "" ? (
+              {console.log({ user: props.users })}
+
+              {user.menorTiempo < 30 && user.menorTiempo !== "" ? (
                 <>
                   <h4>Jugador: {user.playerName}</h4>
-                  <h4>Tiempo: {user.tiempo}</h4>
+                  <h4>Mejor Tiempo: {user.menorTiempo}</h4>
                 </>
               ) : (
                 <></>
@@ -30,21 +32,21 @@ const Scores = (props) => {
         <button id="otroIntento" type="submit" onClick={handlerBoton2}>
           Jugar de nuevo
         </button>
-        <button id="winners" type="submit" onClick={handlerBoton3}>
-          Ver Tabla de Mejores Partidas
+        <button id="puntuaciones" type="submit" onClick={handlerBoton3}>
+          Puntuaciones
         </button>
       </div>
     </>
   );
 
-  function handlerBoton() {
-    history.push("/");
-  }
   function handlerBoton2() {
     history.push("/sudoku");
   }
+  function handlerBoton() {
+    history.push("/");
+  }
   function handlerBoton3() {
-    history.push("/winners");
+    history.push("/scores");
   }
 };
 

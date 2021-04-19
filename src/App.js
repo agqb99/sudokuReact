@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import Sudoku from "./components/Sudoku";
 import Scores from "./components/Scores";
 import { Route, Switch } from "react-router-dom";
-
+import Winners from "./components/Winners";
 function App() {
   const [users, setUsers] = React.useState([]);
   const [playerName, setPlayerName] = React.useState("");
@@ -38,6 +38,11 @@ function App() {
         render={() => (
           <Sudoku playerName={playerName} users={users} setUsers={setUsers} />
         )}
+      />
+      <Route
+        path="/winners"
+        exact
+        render={() => <Winners playerName={playerName} users={users} />}
       />
     </Switch>
   );

@@ -76,7 +76,6 @@ const Sudoku = (props) => {
     const tableroSet = new Set(returnArray);
     console.log(tableroSet.size);
     console.log(returnArray.length);
-    // returnArray.length === tableroSet.size;
     return returnArray.length !== tableroSet.size;
   }
 
@@ -94,8 +93,27 @@ const Sudoku = (props) => {
       alert("Valores repetidos");
       return;
     }
-    const tiempoTotal = (tiempoFinal - tiempoInicial) / 1000;
-    console.log(tiempoTotal);
+    // const tiempoMenor = tiempoFinal - tiempoInicial <= 30;
+    let tiempoTotal = (tiempoFinal - tiempoInicial) / 1000;
+
+    // const tiempoMenor = props.users.map((user) => {
+    //   if (user.playerName === props.playerName) {
+    //     let tiempo = 0;
+    //     console.log(props.tiempo);
+    //     if (props.tiempo) {
+    //       // console.log("entro a if");
+
+    //       props.tiempo > tiempoTotal
+    //         ? (tiempo = tiempoTotal)
+    //         : (tiempo = props.tiempo);
+    //     } else {
+    //       tiempo = tiempoTotal;
+    //       console.log("entro a else");
+    //     }
+    //   }
+    //   return user;
+    // });
+    // tiempoMenor();
 
     console.log(props.users);
     props.setUsers(
@@ -103,23 +121,32 @@ const Sudoku = (props) => {
         // return user
         if (user.playerName === props.playerName) {
           let tiempo = 0;
+          let menorTiempo = "";
           console.log(props.tiempo);
           if (props.tiempo) {
-            console.log("entro a if");
+            // console.log("entro a if");
 
             props.tiempo > tiempoTotal
               ? (tiempo = tiempoTotal)
               : (tiempo = props.tiempo);
           } else {
             tiempo = tiempoTotal;
-            console.log("entro a else");
+            if (tiempo < 30) {
+              user.playerName = "";
+              menorTiempo = tiempo;
+              console.log(menorTiempo);
+            }
+            // else {
           }
-          console.log(tiempo);
-          console.log(props);
+          // console.log(tiempo);
+          // console.log(props);
+          //   tiempo = tiempoTotal;
+          // }
 
           return {
             playerName: props.playerName,
             tiempo: tiempo,
+            menorTiempo: menorTiempo,
           };
         }
 
