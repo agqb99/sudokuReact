@@ -219,40 +219,30 @@ const Sudoku = (props) => {
   }
 
   function checkTablero() {
+    let arrayDeErrores = [];
     const tiempoFinal = Date.now();
     if (hasEmptyCells()) {
-      alert("No podes dejar valores vacios");
-      return;
+      // alert("No podes dejar valores vacios");
+      // return;
+      arrayDeErrores.push("No podes dejar valores vacios");
     }
     if (hasDuplicateInColumns()) {
-      alert("Valores repetidos en una columna!");
-      return;
+      // alert("Valores repetidos en una columna!");
+      // return;
+      arrayDeErrores.push("Valores repetidos en una columna!");
     }
     if (hasDuplicateInRows()) {
-      alert("Valores repetidos en una fila!");
-      return;
+      // alert("Valores repetidos en una fila!");
+      // return;
+      arrayDeErrores.push("Valores repetidos en una fila!");
+    } else if ((arrayDeErrores = [])) {
+      arrayDeErrores.push("No hay valores repetidos!");
+      cleanCells();
+      history.push("/home");
     }
+    alert(arrayDeErrores);
     // const tiempoMenor = tiempoFinal - tiempoInicial <= 30;
     let tiempoTotal = (tiempoFinal - tiempoInicial) / 1000;
-
-    // const tiempoMenor = props.users.map((user) => {
-    //   if (user.playerName === props.playerName) {
-    //     let tiempo = 0;
-    //     console.log(props.tiempo);
-    //     if (props.tiempo) {
-    //       // console.log("entro a if");
-
-    //       props.tiempo > tiempoTotal
-    //         ? (tiempo = tiempoTotal)
-    //         : (tiempo = props.tiempo);
-    //     } else {
-    //       tiempo = tiempoTotal;
-    //       console.log("entro a else");
-    //     }
-    //   }
-    //   return user;
-    // });
-    // tiempoMenor();
 
     console.log(props.users);
     props.setUsers(
@@ -293,9 +283,7 @@ const Sudoku = (props) => {
       })
     );
 
-    alert("No hay valores repetidos");
-    cleanCells();
-    history.push("/home");
+    // alert("No hay valores repetidos");
   }
 
   function handleChange(e) {
