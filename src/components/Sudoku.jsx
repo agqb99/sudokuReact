@@ -176,7 +176,6 @@ const Sudoku = (props) => {
         console.log(row[contador].value);
         columns.push(row[contador].value);
       });
-
       const tableroSet = new Set(columns);
       // console.log(tableroSet.size);
       // console.log(columns.length);
@@ -190,7 +189,6 @@ const Sudoku = (props) => {
       // return rows.length !== tableroSet.size;
     });
     console.log(hasDuplicate);
-
     return hasDuplicate;
   }
 
@@ -232,10 +230,9 @@ const Sudoku = (props) => {
       arrayDeErrores.push("Valores repetidos en una columna!");
     }
     if (hasDuplicateInRows()) {
-      // alert("Valores repetidos en una fila!");
-      // return;
       arrayDeErrores.push("Valores repetidos en una fila!");
-    } else if ((arrayDeErrores = [])) {
+    }
+    if (arrayDeErrores.length === 0) {
       arrayDeErrores.push("No hay valores repetidos!");
       cleanCells();
       history.push("/home");
