@@ -4,103 +4,103 @@ import { useHistory } from "react-router-dom";
 const Sudoku = (props) => {
   const inicialTablero = [
     [
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
+      { value: "6", enabled: true },
+      { value: "1", enabled: true },
+      { value: "9", enabled: true },
+      { value: "7", enabled: true },
+      { value: "4", enabled: true },
+      { value: "2", enabled: true },
+      { value: "3", enabled: true },
+      { value: "5", enabled: true },
+      { value: "8", enabled: true },
     ],
     [
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
+      { value: "4", enabled: true },
+      { value: "5", enabled: true },
+      { value: "7", enabled: true },
+      { value: "8", enabled: true },
+      { value: "3", enabled: true },
+      { value: "1", enabled: true },
+      { value: "6", enabled: true },
+      { value: "9", enabled: true },
+      { value: "2", enabled: true },
     ],
     [
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
+      { value: "8", enabled: true },
+      { value: "2", enabled: true },
+      { value: "3", enabled: true },
+      { value: "6", enabled: true },
+      { value: "9", enabled: true },
+      { value: "5", enabled: true },
+      { value: "1", enabled: true },
+      { value: "7", enabled: true },
+      { value: "4", enabled: true },
     ],
     [
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
+      { value: "2", enabled: true },
+      { value: "3", enabled: true },
+      { value: "6", enabled: true },
+      { value: "4", enabled: true },
+      { value: "1", enabled: true },
+      { value: "9", enabled: true },
+      { value: "5", enabled: true },
+      { value: "8", enabled: true },
+      { value: "7", enabled: true },
     ],
     [
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
+      { value: "5", enabled: true },
+      { value: "9", enabled: true },
+      { value: "1", enabled: true },
+      { value: "2", enabled: true },
+      { value: "7", enabled: true },
+      { value: "8", enabled: true },
+      { value: "4", enabled: true },
+      { value: "6", enabled: true },
+      { value: "3", enabled: true },
     ],
     [
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
+      { value: "7", enabled: true },
+      { value: "8", enabled: true },
+      { value: "4", enabled: true },
+      { value: "3", enabled: true },
+      { value: "5", enabled: true },
+      { value: "6", enabled: true },
+      { value: "2", enabled: true },
+      { value: "1", enabled: true },
+      { value: "9", enabled: true },
     ],
     [
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
+      { value: "9", enabled: true },
+      { value: "6", enabled: true },
+      { value: "2", enabled: true },
+      { value: "1", enabled: true },
+      { value: "8", enabled: true },
+      { value: "3", enabled: true },
+      { value: "7", enabled: true },
+      { value: "4", enabled: true },
+      { value: "5", enabled: true },
     ],
     [
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
+      { value: "3", enabled: true },
+      { value: "4", enabled: true },
+      { value: "5", enabled: true },
+      { value: "9", enabled: true },
+      { value: "6", enabled: true },
+      { value: "7", enabled: true },
+      { value: "8", enabled: true },
+      { value: "2", enabled: true },
+      { value: "6", enabled: true },
     ],
     [
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
-      { value: "", enabled: true },
+      { value: "1", enabled: true },
+      { value: "7", enabled: true },
+      { value: "8", enabled: true },
+      { value: "5", enabled: true },
+      { value: "2", enabled: true },
+      { value: "4", enabled: true },
+      { value: "9", enabled: true },
+      { value: "6", enabled: true },
+      { value: "6", enabled: true },
     ],
   ];
   const [tablero, setTablero] = React.useState(inicialTablero);
@@ -144,8 +144,55 @@ const Sudoku = (props) => {
       </div>
     </>
   );
-  // function hasDuplicateInRows() {}
-  // function hasDuplicateInColumns() {}
+  function hasDuplicateInRows() {
+    const rows = []; //[1,2,3,4,5,6,7,8,9]
+    let hasDuplicate = false;
+    tablero.forEach((row, i) => {
+      row.forEach((celda, j) => {
+        rows.push(tablero[i][j].value);
+      });
+      console.log(rows);
+
+      const tableroSet = new Set(rows);
+      console.log(tableroSet.size);
+      console.log(rows.length);
+      if (rows.length !== tableroSet.size) {
+        // console.log(true);
+        hasDuplicate = true;
+      }
+      rows.splice(0, rows.length);
+      // return rows.length !== tableroSet.size;
+    });
+    console.log(hasDuplicate);
+
+    return hasDuplicate;
+  }
+  function hasDuplicateInColumns() {
+    const columns = []; //[1,2,3,4,5,6,7,8,9]
+    let contador = 0;
+    let hasDuplicate = false;
+    tablero.forEach((row) => {
+      tablero.forEach((row, i) => {
+        console.log(row[contador].value);
+        columns.push(row[contador].value);
+      });
+
+      const tableroSet = new Set(columns);
+      // console.log(tableroSet.size);
+      // console.log(columns.length);
+      if (columns.length !== tableroSet.size) {
+        // console.log(true);
+        hasDuplicate = true;
+      }
+      console.log(columns);
+      columns.splice(0, columns.length);
+      contador++;
+      // return rows.length !== tableroSet.size;
+    });
+    console.log(hasDuplicate);
+
+    return hasDuplicate;
+  }
 
   function hasEmptyCells() {
     const returnArray = tablero.flat().map((e) => {
@@ -157,15 +204,15 @@ const Sudoku = (props) => {
     return empty;
   }
 
-  function hasDuplicate() {
-    const returnArray = tablero.flat().map((e) => {
-      return e.value;
-    });
-    const tableroSet = new Set(returnArray);
-    console.log(tableroSet.size);
-    console.log(returnArray.length);
-    return returnArray.length !== tableroSet.size;
-  }
+  // function hasDuplicate() {
+  //   const returnArray = tablero.flat().map((e) => {
+  //     return e.value;
+  //   });
+  //   const tableroSet = new Set(returnArray);
+  //   console.log(tableroSet.size);
+  //   console.log(returnArray.length);
+  //   return returnArray.length !== tableroSet.size;
+  // }
 
   function cleanCells() {
     setTablero(inicialTablero);
@@ -177,8 +224,12 @@ const Sudoku = (props) => {
       alert("No podes dejar valores vacios");
       return;
     }
-    if (hasDuplicate()) {
-      alert("Valores repetidos");
+    if (hasDuplicateInColumns()) {
+      alert("Valores repetidos en una columna!");
+      return;
+    }
+    if (hasDuplicateInRows()) {
+      alert("Valores repetidos en una fila!");
       return;
     }
     // const tiempoMenor = tiempoFinal - tiempoInicial <= 30;
@@ -273,3 +324,6 @@ const Sudoku = (props) => {
 };
 
 export default Sudoku;
+
+// Primera columna, agarrar el primer objeto de c/ arreglo y hacer un nuevo arreglo con esos valores para validar si hay duplicados.
+//Para la segunda columna, tomar el segundo objeto y asi
